@@ -1,9 +1,12 @@
+# author "David Danielsson"
 version: "2"
 services:
   # PHP
   php:
     restart: always
-    image: php:5.6-fpm-alpine
+    build: 
+      context: .
+      dockerfile: php-Dockerfile
     ports:
       - "9000:9000"
     volumes:
@@ -35,5 +38,5 @@ services:
     volumes:
       - ./db:/var/lib/mysql:rw
       - ./logs/mysql:/var/log/mysql:rw
-
+      - ./www:/usr/local/nginx/html/:rw
 

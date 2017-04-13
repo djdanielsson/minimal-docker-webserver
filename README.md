@@ -10,5 +10,4 @@ then go to a browser and type localhost:8080 and any webpages placed in www
 folder should be accessable
 
 Based off of https://github.com/devigner/docker-compose-php with the attempt to
-run the minimal versions (alpine) when avalible. Also had some issues with this
-script not working for me.
+run the minimal versions (alpine) when avalible.
