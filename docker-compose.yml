@@ -1,14 +1,13 @@
-# author "David Danielsson"
 version: "2"
 services:
-  # PHP
-  php:
+  # PYTHON
+  python:
     restart: always
     build: 
       context: .
-      dockerfile: php-Dockerfile
+      dockerfile: pip-Dockerfile
     ports:
-      - "9000:9000"
+      - "8000:8000"
     volumes:
       - ./www:/usr/local/nginx/html/:rw
 
