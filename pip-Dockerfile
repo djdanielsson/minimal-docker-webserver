@@ -4,6 +4,8 @@ RUN apk upgrade --update && apk add \
       python3 \
       py-pip
 RUN pip install --upgrade pip
-RUN pip install Django
-CMD python /usr/local/nginx/html/manage.py runserver 0:8000
+RUN pip install flask
+CMD python /usr/local/nginx/html/app.py
+#RUN pip install Django
+#CMD python /usr/local/nginx/html/manage.py runserver 0:8000
 
