@@ -1,0 +1,21 @@
+#FROM arm64v8/php:7.0-fpm
+#FROM arm64v8/alpine
+FROM ubuntu:latest
+LABEL author="David Danielsson"
+#RUN docker-php-ext-install mysqli
+#RUN docker-php-ext-install pdo
+#RUN docker-php-ext-install pdo_mysql
+#RUN apk upgrade --update && apk add \
+#  coreutils \
+#  freetype-dev \
+#  libjpeg-turbo-dev \
+#  libltdl \
+#  libmcrypt-dev \
+#  libpng-dev 
+#&& docker-php-ext-install -j$(nproc) iconv mcrypt \
+#&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+#&& docker-php-ext-install -j$(nproc) gd
+RUN apt-get update
+RUN apt-get install -y php7.0 php7.0-fpm php7.0-cli php7.0-common php7.0-mbstring php7.0-gd php7.0-intl php7.0-xml php7.0-mysql php7.0-mcrypt php7.0-zip
+
+
