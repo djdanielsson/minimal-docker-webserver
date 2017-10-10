@@ -3,9 +3,7 @@ services:
   # PHP
   php:
     restart: always
-    build:
-      context: .
-      dockerfile: php-Dockerfile
+    image: sergeytykhonov/rpi-php:7.1-fpm-alpine #https://hub.docker.com/r/sergeytykhonov/rpi-php/
     ports:
       - "9000:9000"
     volumes:
