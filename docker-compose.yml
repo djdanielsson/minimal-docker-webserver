@@ -1,15 +1,14 @@
 version: "2"
 services:
-  # PYTHON
-  python:
+#NODEJS
+  nodejs:
     restart: always
-    build: 
-      context: .
-      dockerfile: pip-Dockerfile
+    image: node:10-alpine
     ports:
-      - "5000:5000"
+      - "8888:8888"
     volumes:
       - ./www:/usr/local/nginx/html/:rw
+    command: /bin/sh -c "node /usr/local/nginx/html/app.js"
 
   # NGINX
   nginx:
