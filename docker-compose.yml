@@ -3,12 +3,15 @@ services:
 #NODEJS
   nodejs:
     restart: always
-    image: node:10-alpine
+    #image: node:10-alpine
+    build:
+      context: .
+      dockerfile: nodejs-Dockerfile
     ports:
       - "8888:8888"
     volumes:
       - ./www:/usr/local/nginx/html/:rw
-    command: /bin/sh -c "node /usr/local/nginx/html/app.js"
+        #command: /bin/sh -c "node /usr/local/nginx/html/app.js"
 
   # NGINX
   nginx:

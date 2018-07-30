@@ -1,0 +1,8 @@
+FROM node:10-alpine
+LABEL author="David Danielsson"
+RUN npm install nodemon react react-dom webpack
+
+#gatsbyjs
+CMD node /usr/local/nginx/html/app.js
+
+
