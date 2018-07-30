@@ -1,3 +1,7 @@
+#https://github.com/greglobinski/gatsby-starter-personal-blog
+#https://next.gatsbyjs.org/
+#https://www.primefaces.org/primereact/#/
+#https://material-ui.com/
 # docker-webserver-minal
 
 make sure to download and install docker using these instructions and do not use
