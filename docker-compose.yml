@@ -26,18 +26,18 @@ services:
     command: /bin/sh -c "nginx -g 'daemon off;'"
 
   # MYSQL
-  db:
-    restart: always
-    image: mysql
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: database
-    volumes:
-      - ./db:/var/lib/mysql:rw
-      - ./logs/mysql:/var/log/mysql:rw
-      - ./www:/usr/local/nginx/html/:rw
+  #  db:
+  #    restart: always
+  #    image: mysql
+  #    ports:
+  #      - "3306:3306"
+  #    environment:
+  #      MYSQL_ROOT_PASSWORD: 123456
+  #      MYSQL_USER: user
+  #      MYSQL_PASSWORD: password
+  #      MYSQL_DATABASE: database
+  #    volumes:
+  #      - ./db:/var/lib/mysql:rw
+  #      - ./logs/mysql:/var/log/mysql:rw
+  #      - ./www:/usr/local/nginx/html/:rw
 

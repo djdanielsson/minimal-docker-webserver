@@ -1,7 +1,10 @@
 FROM node:10-alpine
 LABEL author="David Danielsson"
-RUN npm install nodemon react react-dom webpack
+RUN npm install nodemon react react-dom webpack 
+#RUN npm install --global gatsby-cli
 
+#CMD gatsby new /usr/local/nginx/html/ https://github.com/greglobinski/gatsby-starter-personal-blog.git
 CMD node /usr/local/nginx/html/app.js
-
+#CMD cd /usr/local/nginx/html/
+#CMD gatsby develop
 
