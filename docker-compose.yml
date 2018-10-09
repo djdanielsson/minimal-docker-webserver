@@ -1,14 +1,14 @@
 # author "David Danielsson"
 version: "2"
 services:
-  # PHP
-  php:
-    restart: always
+  # RUST
+  rust:
+    #restart: always
     build: 
       context: .
-      dockerfile: php-Dockerfile
+      dockerfile: rust-Dockerfile
     ports:
-      - "9000:9000"
+      - "6767:6767"
     volumes:
       - ./www:/usr/local/nginx/html/:rw
 

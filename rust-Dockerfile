@@ -1,0 +1,7 @@
+FROM alpine
+LABEL author="David Danielsson"
+RUN apk upgrade --update && apk add \
+  rust \
+  cargo \
+
+RUN cargo install nickel
