@@ -1,12 +1,16 @@
 FROM alpine
 LABEL author="David Danielsson"
+ARG USER=root
+USER $root
 RUN apk upgrade --update && apk add \
   rust \
   cargo \
-  openssl
-RUN cargo new --bin test
-RUN cd /test
-RUN wget cargo.toml
-RUN cargo build
+  openssl \
+  wget \
+  ca-certificates 
+RUN update-ca-certificates
+RUN cargo new --bin web_server
+RUN wget https://raw.githubusercontent.com/djdanielsson/minimal-docker-webserver/rust/cargo.toml -O /web_server/cargo.toml
+RUN cd /web_server; cargo build
 
-#RUN cargo install nickel
+
