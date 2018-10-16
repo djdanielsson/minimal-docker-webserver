@@ -4,4 +4,4 @@ version = "1.0"
 authors = ["David Danielsson"]
 
 [dependencies]
-nickel = "0.10.1"
+nickel = "*"
