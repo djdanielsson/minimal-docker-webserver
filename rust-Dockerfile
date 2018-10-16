@@ -3,5 +3,10 @@ LABEL author="David Danielsson"
 RUN apk upgrade --update && apk add \
   rust \
   cargo \
+  openssl
+RUN cargo new --bin test
+RUN cd /test
+RUN wget cargo.toml
+RUN cargo build
 
-RUN cargo install nickel
+#RUN cargo install nickel
