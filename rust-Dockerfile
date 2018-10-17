@@ -7,10 +7,13 @@ RUN apk upgrade --update && apk add \
   cargo \
   openssl \
   wget \
-  ca-certificates 
+  ca-certificates
 RUN update-ca-certificates
 RUN cargo new --bin web_server
-RUN wget https://raw.githubusercontent.com/djdanielsson/minimal-docker-webserver/rust/cargo.toml -O /web_server/Cargo.toml
+RUN wget https://raw.githubusercontent.com/djdanielsson/minimal-docker-webserver/rust/cargo.toml -O /web_server/cargo.toml
 RUN cd /web_server; cargo build
+RUN cd /web_server; cargo update
+#current fix until find better way
+RUN echo 'nickel = "*"' >> /web_server/Cargo.toml
 CMD cd /web_server;ls -Rl;cat *; cargo run
 
